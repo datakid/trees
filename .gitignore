@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+MANIFEST
+*.egg-info
+*.egg
+pip-log.txt
+*.swp
+*collected_static*
+*wsgi.py
+*production.py
