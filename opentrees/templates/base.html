@@ -1,0 +1,40 @@
+{% extends 'bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+        <h1>{% block title %}(no title){% endblock %}</h1>
+        <div class="row">
+            {% block navigation %}
+            <nav class="navbar navbar-inverse" role="navigation">{# title/header row  #}
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'index' %}"><img class="brand" src=""></img></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'index' %}">Tree List</a></li>
+                        <li><a href="{% url 'tree_add' %}">Add a tree</a></li>
+                    </ul>
+                </div>
+            </nav>
+      {% endblock navigation %}
+      </div> <!-- end navigation row -->
+
+    <div class="row">{# main content #}
+        <div class="col-md-1">
+            <div class="row">&nbsp</div>{# these empty rows are padding #}
+                {% block sidebar %}
+                {% endblock sidebar %} {# end sidebar #}
+            </div>
+        <div class="col-md-10">
+
+        {% bootstrap_messages %}
+        {% block content %}(no content){% endblock %}
+        </div>{# end content #}
+    </div> {# end container-fluid #}
+
+      <div class="row" id="footer">{# footer #}
+      </div>
+
+{% endblock %}
