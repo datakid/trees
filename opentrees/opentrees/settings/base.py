@@ -25,7 +25,7 @@ SECRET_KEY = '10y&a3@eafv^(%b)r*rq!u1a0fcj!usuob!&50%0zi9($tv$*8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.constraintworks.com', 'trees.constraintworks.com']
 
 
 # Application definition
@@ -89,8 +89,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = BASE_DIR+'/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)

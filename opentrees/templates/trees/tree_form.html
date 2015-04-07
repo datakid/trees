@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 
-{% block content %}
+{% block main_content %}
     <h2>New Tree</h2>
-        {# Display a form #}
+
+    {# Display a form #}
         <form action="" method="post" class="form">
           {% csrf_token %}
           {% bootstrap_form form %}
