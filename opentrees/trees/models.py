@@ -28,9 +28,9 @@ class Tree(models.Model):
     slug = models.SlugField(max_length=60, unique=True)
 
     def get_absolute_url(self):
-        return reverse('tree_view', args=[self.slug])
+        return reverse('tree_detail', args=[self.slug])
 
-    def save(self):
+    def save(self, *args, **kwargs):
         temp_slug = "%s-%s-%s" % (self.lat, self.lon, self.id)
         self.slug = slugify(temp_slug)
         super(Tree, self).save(*args, **kwargs)
