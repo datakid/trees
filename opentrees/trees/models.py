@@ -3,6 +3,8 @@ from django.db import models
 import .choices
 
 class Tree(models.Model):
+    lat = models.FloatField()
+    lon = models.FloatField()
     genus = models.CharField(max_length=30, choices=GENUS_CHOICES)
     species = models.CharField(max_length=30, choices=SPECIES_CHOICES)
     dbh = models.IntegerField('Diameter at breast height, cm')
