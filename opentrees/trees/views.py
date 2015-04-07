@@ -12,6 +12,7 @@ class TreeDetail(DetailView):
 
 class TreeCreate(CreateView):
     model = Tree
+    fields = ['lat', 'lon', 'genus', 'species', 'dbh', 'ule_min', 'ule_max', 'crown', 'height', 'common', 'location', 'ref', 'maintenance_schedule', 'last_maintenance', 'maturity', 'planted', 'captured', 'health', 'structure']
 
 class TreeUpdate(UpdateView):
     model = Tree
