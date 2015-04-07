@@ -4,16 +4,116 @@
 {% block main_content %}
     <h2>New Tree</h2>
 
-    {# Display a form #}
-        <form action="" method="post" class="form">
-          {% csrf_token %}
-          {% bootstrap_form form %}
-          {% buttons %}
-            <button type="submit" class="btn btn-primary">
-              {% bootstrap_icon "star" %} Submit
-            </button>
-          {% endbuttons %}
-        </form>
+
+<div class="col-md-6 form-horizontal">
+    <h4>Required Fields</h4>
+    <form action="" method="post" role="form">{% csrf_token %}
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Latitude</div>
+      <div class="col-md-5">{{ form.lat }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Longitude</div>
+      <div class="col-md-5">{{ form.lon }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Genus</div>
+      <div class="col-md-5">{{ form.genus }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Species</div>
+      <div class="col-md-5">{{ form.species }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Diameter at breast height</div>
+      <div class="col-md-5">{{ form.dbh }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Lower bound on age, years</div>
+      <div class="col-md-5">{{ form.ule_min }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Upper bound on age, years</div>
+      <div class="col-md-5">{{ form.ule_max }}</div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6 form-horizontal">
+
+      <h4>Optional Fields</h4>
+      <div class="form-group">
+      <div class="col-md-4 control-label">Crown</div>
+      <div class="col-md-5">{{ form.crown }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Height</div>
+      <div class="col-md-5">{{ form.height }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Common Name</div>
+      <div class="col-md-5">{{ form.common }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Location</div>
+      <div class="col-md-5">{{ form.location }}</div>
+      </div>
+      
+      <div class="form-group">
+      <div class="col-md-4 control-label">Reference from other db</div>
+      <div class="col-md-5">{{ form.ref }}</div>
+      </div>
+      
+    <div class="form-group">
+      <div class="col-md-4 control-label">Maintenance Schedule, # of months</div>
+      <div class="col-md-5">{{ form.maintenace_schedule }}</div>
+      </div>
+    
+  <div class="form-group">
+      <div class="col-md-4 control-label">Last Maintenance date</div>
+      <div class="col-md-5">{{ form.serial_number }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Maturity</div>
+      <div class="col-md-5">{{ form.maturity }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Planted</div>
+      <div class="col-md-5">{{ form.planted }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Date captured in db</div>
+      <div class="col-md-5">{{ form.captured }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Health of tree</div>
+      <div class="col-md-5">{{ form.health }}</div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-md-4 control-label">Structure of tree</div>
+      <div class="col-md-5">{{ form.structure }}</div>
+      </div>
+
+  <button type="submit" class="btn btn-primary">Add tree</button>
+  </form>
+</div>
+
+
 {% endblock %}
 
 
