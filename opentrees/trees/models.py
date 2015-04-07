@@ -1,6 +1,6 @@
 from django.db import models
 
-import .choices
+from choices import GENUS_CHOICES, SPECIES_CHOICES, LOCATION_CHOICES, HEALTH_CHOICES, STRUCTURE_CHOICES, COMMON_NAME_CHOICES, MATURITY_CHOICES
 
 class Tree(models.Model):
     lat = models.FloatField()
@@ -18,7 +18,7 @@ class Tree(models.Model):
     ref = models.CharField(max_length=30, blank=True)
     maintenance_schedule = models.IntegerField(blank=True, null=True)
     last_maintenance = models.DateField(blank=True, null=True)
-    maturity = models.CharField(length=1, choices=MATURITY_CHOICES, blank=True)
+    maturity = models.CharField(max_length=1, choices=MATURITY_CHOICES, blank=True)
     planted = models.DateField(blank=True, null=True)
     captured = models.DateField(blank=True, null=True)
     health = models.CharField(max_length=1, choices=HEALTH_CHOICES, blank=True)
