@@ -4,7 +4,7 @@ import .choices
 
 class Tree(models.Model):
     genus = models.CharField(max_length=30, choices=GENUS_CHOICES)
-    species = models.CharField(max_length=20, choices=SPECIES_CHOICES)
+    species = models.CharField(max_length=30, choices=SPECIES_CHOICES)
     dbh = models.IntegerField('Diameter at breast height, cm')
     ule_min = models.IntegerField('Lower bound on age, years')
     ule_max = models.IntegerField('Upper bound on age, years')
