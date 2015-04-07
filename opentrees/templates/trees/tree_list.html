@@ -4,7 +4,7 @@
     <h2>Trees</h2>
     <ul>
         {% for tree in object_list %}
-            <li>Lat: {{ tree.lat }}, Lon: {{ tree.lon }}, Name: {{ tree.genus }}</li>
+        <li><a href="i{{ tree.get_absolute_url }}">Lat: {{ tree.lat }}, Lon: {{ tree.lon }}, Name: {{ tree.genus }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
